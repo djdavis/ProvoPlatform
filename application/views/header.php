@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Sumea - Start</title>
+<title><?=$title?></title>
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo base_url('assets/favicons/apple-touch-icon-57x57.png') ?>">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo base_url('assets/favicons/apple-touch-icon-60x60.png') ?>">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url('assets/favicons/apple-touch-icon-72x72.png') ?>">
@@ -30,6 +30,9 @@
 
 <!-- Dashboard Theme CSS -->
 <link rel='stylesheet' href='<?php echo base_url('assets/styles/styles-theme.css') ?>'>
+
+<!-- Custom Platform CSS -->
+<link rel='stylesheet' href='<?php echo base_url('assets/styles/custom.css') ?>'>
 
 <!-- MetisMenu CSS -->
 <link rel='stylesheet' href='<?php echo base_url('assets/bower_components/metisMenu/dist/metisMenu.min.css') ?>'>
