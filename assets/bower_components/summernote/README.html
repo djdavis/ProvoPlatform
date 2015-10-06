@@ -1,0 +1,198 @@
+<h1>Summernote</h1>
+
+<p>Super simple WYSIWYG Editor using Bootstrap (3.0 and 2.x).</p>
+
+<p><a href="http://travis-ci.org/summernote/summernote"><img src="https://secure.travis-ci.org/summernote/summernote.png" alt="Build Status" /></a>
+<a href="http://badge.fury.io/js/summernote"><img src="https://badge.fury.io/js/summernote.svg" alt="npm version" /></a>
+<a href="https://gemnasium.com/summernote/summernote"><img src="https://gemnasium.com/summernote/summernote.svg" alt="Dependency Status" /></a></p>
+
+<p><a href="https://saucelabs.com/u/summernoteis"><img src="https://saucelabs.com/browser-matrix/summernoteis.svg" alt="Sauce Test Status" /></a></p>
+
+<h3>Summernote</h3>
+<p>Summernote is a JavaScript library that helps you create WYSIWYG editors online.</p>
+
+<p>Home Page: http://summernote.org</p>
+
+<h3>Why Summernote?</h3>
+
+<p>Summernote has a few special features:</p>
+
+<ul>
+  <li>Paste images from clipboard</li>
+  <li>Saves images directly in the content of the field using base64 encoding, so you don’t need to implement image handling at all</li>
+  <li>Simple UI</li>
+  <li>Interactive WYSIWYG editing</li>
+  <li>Handy integration with server</li>
+</ul>
+
+<h4>Inspired by</h4>
+<ul>
+  <li>Gmail’s WYSIWYG editor (http://www.gmail.com)</li>
+  <li>Redactor (http://imperavi.com/redactor/)</li>
+</ul>
+
+<h3>Installation and dependencies</h3>
+
+<p>Summernote uses opensource libraries: <a href="http://jquery.com/">jQuery</a>, <a href="http://getbootstrap.com">Bootstrap</a>, <a href="https://github.com/FortAwesome/Font-Awesome">Font Awesome</a>.</p>
+
+<p>For <a href="http://github.com/meteor/meteor">Meteor</a>, just run <code>meteor add summernote:summernote</code>. More info in the <a href="meteor/README.md">Meteor README</a>.</p>
+
+<p>For other/no frameworks:</p>
+
+<h4>1. include JS/CSS</h4>
+
+<p>Include the following code in the <code>&lt;head&gt;</code> tag of your HTML:</p>
+
+<p>```html
+<!-- include libraries(jQuery, bootstrap, fontawesome) -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" /></p>
+
+<!-- include summernote css/js-->
+<link href="summernote.css" rel="stylesheet" />
+
+<script src="summernote.min.js"></script>
+
+<p>```</p>
+
+<h4>2. target elements</h4>
+
+<p>Then place a <code>div</code> tag somewhere in the <code>body</code> tag. This element will be replaced with the summernote editor.</p>
+
+<p><code>html
+&lt;div id="summernote"&gt;Hello Summernote&lt;/div&gt;
+</code></p>
+
+<h4>3. summernote</h4>
+
+<p>Finally, run this script after the DOM is ready:</p>
+
+<p><code>javascript
+$(document).ready(function() {
+  $('#summernote').summernote();
+});
+</code></p>
+
+<h3>API</h3>
+
+<p><code>code</code> - get the HTML source code underlying the text in the editor:</p>
+
+<p><code>javascript
+var sHTML = $('#summernote').code();
+</code></p>
+
+<p><code>Destroy</code> summernote:</p>
+
+<p><code>javascript
+$('#summernote').destroy();
+</code></p>
+
+<h4>Warning - code injection</h4>
+
+<p>The code view allows the user to enter script contents. Make sure to filter/<a href="https://github.com/search?l=JavaScript&amp;q=sanitize+html">sanitize the HTML on the server</a>. Otherwise, an attacker can inject arbitrary JavaScript code into clients.</p>
+
+<h3>Supported platforms</h3>
+
+<p>Any modern browser: Safari, Chrome, Firefox, Opera, Internet Explorer 9+.</p>
+
+<h3>Upcoming Features</h3>
+<ul>
+  <li>Responsive toolbar</li>
+  <li>Table: Handles (sizing, selection) and popover</li>
+  <li>IE8 Support</li>
+  <li>Clipboard (you can paste images already)</li>
+  <li>Media object selection</li>
+</ul>
+
+<h3>Developer information</h3>
+
+<h4>structure of summernote.js</h4>
+
+<p><code>
+summernote.js - Renderer.js (Generate markup) - Locale.js (Locale object)
+              ㄴEventHandler.js - Toolbar.js (Toolbar module)
+                                ㄴPopover.js (Popover module)
+                                ㄴHandle.js  (Handle module)
+                                ㄴDialog.js  (Dialog module)
+                                ㄴEditor.js  (Abstract editor module) - Style.js (Style Getter and Setter)
+                                                                      ㄴHistory.js (Store on jQuery.data)
+-----------------------------Core Script-----------------------------
+  agent.js  (agent information)
+  async.js  (aysnc utility)
+  key.js    (keycode object)
+  dom.js    (dom functions)
+  list.js   (list functions)
+  range.js  (W3CRange extention)
+---------------------------------------------------------------------
+</code></p>
+
+<h4>document structure</h4>
+
+<p><code>
+ - body container: &lt;div class="note-editable"&gt;, &lt;td&gt;, &lt;blockquote&gt;, &lt;ul&gt;
+ - block node: &lt;div&gt;, &lt;p&gt;, &lt;li&gt;, &lt;h1&gt;, &lt;table&gt;
+ - void block node: &lt;hr&gt;
+ - inline node: &lt;span&gt;, &lt;b&gt;, &lt;font&gt;, &lt;a&gt;, ...
+ - void inline node: &lt;img&gt;
+ - text node: #text
+</code></p>
+
+<ol>
+  <li>A body container has block node, but <code>&lt;ul&gt;</code> has only <code>&lt;li&gt;</code> nodes.</li>
+  <li>A body container also has inline nodes sometimes. This inline nodes will be wraped with <code>&lt;p&gt;</code> when enter key pressed.</li>
+  <li>A block node only has inline nodes.</li>
+  <li>A inline nodes has another inline nodes</li>
+  <li><code>#text</code> and void inline node doesn’t have children.</li>
+</ol>
+
+<h4>build summernote</h4>
+<p>```bash
+# grunt-cli is need by grunt; you might have this installed already
+npm install -g grunt-cli
+npm install</p>
+
+<h1>build full version of summernote: dist/summernote.js</h1>
+<p>grunt build</p>
+
+<h1>generate minified copy: dist/summernote.min.js, dist/summernote.css</h1>
+<p>grunt dist
+```
+At this point, you should now have a <code>build/</code> directory populated with everything you need to use summernote.</p>
+
+<h4>test summernote</h4>
+<p>run tests with PhantomJS
+<code>bash
+grunt test
+</code></p>
+
+<h4>start local server for developing summernote.</h4>
+<p>run local server with connect and watch.
+<code>bash
+grunt server
+# Open a browser on http://localhost:3000.
+# If you change source code, automatically reload your page.
+</code></p>
+
+<h4>Coding convention</h4>
+<ul>
+  <li>JSHint: http://www.jshint.com/about/</li>
+  <li>JSHint rule: https://github.com/summernote/summernote/blob/master/.jshintrc</li>
+</ul>
+
+<h4>Contribution guide</h4>
+<ul>
+  <li>Please read <a href="https://github.com/summernote/summernote/blob/develop/CONTRIBUTING.md">CONTRIBUTING.md</a> before sending pull requests.</li>
+</ul>
+
+<h3>Contacts</h3>
+<ul>
+  <li>Email: susukang98@gmail.com</li>
+  <li>Twitter: http://twitter.com/hackerwins</li>
+  <li>Chat with us:
+<a href="https://gitter.im/summernote/summernote?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/summernote/summernote" /></a></li>
+</ul>
+
+<h3>License</h3>
+<p>summernote may be freely distributed under the MIT license.</p>

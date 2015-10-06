@@ -1,0 +1,913 @@
+.profile-logo {
+    margin-top: 30px; 
+    margin-bottom: 30px;
+}
+
+.txt-space {
+ letter-spacing: 1px;
+}
+
+// SWATCHES - COLORS
+
+.color-swatches {
+  margin: 0 -5px;
+  overflow: hidden; /* clearfix */
+}
+.color-swatch {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .color-swatch {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.color-swatches .gray-darker {
+    background-color: @gray-darker;
+}
+.color-swatches .gray-dark {
+    background-color: @gray-dark;
+}
+.color-swatches .gray {
+    background-color: @gray;
+}
+.color-swatches .gray-light {
+    background-color: @gray-light;
+}
+.color-swatches .gray-lighter {
+    background-color: @gray-lighter;
+}
+
+
+.color-swatches .brand-primary {
+    background-color: @brand-primary;
+}
+.color-swatches .brand-info {
+    background-color: @brand-info;
+}
+.color-swatches .brand-success {
+    background-color: @brand-success;
+}
+.color-swatches .brand-warning {
+    background-color: @brand-warning;
+}
+.color-swatches .brand-danger {
+    background-color: @brand-danger;
+}
+
+
+/* .color-swatches .brand-gray2 {
+    background-color: @gray-dark;
+}
+.color-swatches .brand-grape {
+    background-color: @brand-grape;
+}
+.color-swatches .brand-pink {
+    background-color: @brand-success;
+}
+.color-swatches .brand-pink2 {
+    background-color: @brand-pink2;
+}
+.color-swatches .brand-green {
+    background-color: @brand-green;
+}
+.color-swatches .brand-green2 {
+    background-color: @brand-green2;
+}
+*/
+
+// from Bootstrap - docs.css
+
+/* Popovers */
+.bs-example-popover {
+
+  background-color: none;
+}
+.bs-example-popover .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 10px;
+}
+
+/* Example modals */
+.bs-example-modal {
+  background-color: #3e474f;
+}
+.bs-example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+.bs-example-modal .modal-dialog {
+  left: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Example dropdowns */
+.bs-example > .dropdown > .dropdown-toggle {
+  float: left;
+}
+.bs-example > .dropdown > .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 5px;
+  clear: left;
+}
+
+// Disabled Glow Effect in Input (Active/Press)
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: @brand-primary;
+  box-shadow: none;
+}
+
+// Disabled Focus Default in Chrome & Safari
+.btn:focus, .btn:active:focus, .btn.active:focus{
+  outline-color: transparent;
+  outline-style: none;
+}
+
+// Navs Default - border bottom
+.navs-border-bottom {
+    border-style: solid;
+    border-bottom: thick dotted #ff0000;
+}
+
+// TABS LEFT, RIGHT, BOTTOM2
+
+.tabs-left, .tabs-right {
+  border-bottom: none;
+  padding-top: 2px;
+}
+.tabs-left {
+  border-right: 1px solid #ddd;
+}
+.tabs-right {
+  border-left: 1px solid #ddd;
+}
+.tabs-left>li, .tabs-right>li {
+  float: none;
+  margin-bottom: 2px;
+}
+.tabs-left>li {
+  margin-right: -1px;
+}
+.tabs-right>li {
+  margin-left: -1px;
+}
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+  border-bottom-color: #ddd;
+  border-right-color: transparent;
+}
+
+.tabs-right>li.active>a,
+.tabs-right>li.active>a:hover,
+.tabs-right>li.active>a:focus {
+  border-bottom: 1px solid #ddd;
+  border-left-color: transparent;
+}
+.tabs-left>li>a {
+  border-radius: 4px 0 0 4px;
+  margin-right: 0;
+  display:block;
+}
+.tabs-right>li>a {
+  border-radius: 0 4px 4px 0;
+  margin-right: 0;
+}
+
+
+// Badges & Labels Custom Colors & Outline
+
+.badge.primary, .label.primary {
+  background-color: @brand-primary;
+}
+.badge.info,
+.label.info {
+  background-color: @brand-info;
+}
+.badge.warning,
+.label.warning {
+  background-color: @brand-warning;
+}
+.badge.danger,
+.label.danger {
+  background-color: @brand-danger;
+}
+.badge.success,
+.label.success {
+  background-color: @brand-success;
+}
+
+.badge.outline,
+.label.outline {
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
+        
+.badge.outline.primary,
+.label.outline.primary {
+  border-color: @brand-primary;
+  color: @brand-primary;
+}
+
+.badge.outline.default,
+.label.outline.default {
+  border-color: @gray-light;
+  color: @gray-light;
+}
+
+.badge.outline.info,
+.label.outline.info {
+  border-color: @brand-info;
+  color: @brand-info;
+}
+
+.badge.outline.warning,
+.label.outline.warning {
+  border-color: @brand-warning;
+  color: @brand-warning;
+}
+
+.badge.outline.success,
+.label.outline.success {
+  border-color: @brand-success;
+  color: @brand-success;
+}
+
+.badge.outline.danger,
+.label.outline.danger {
+  border-color: @brand-danger;
+  color: @brand-danger;
+}
+ 
+ 
+// Tabs & Pills 
+
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #ddd;
+}
+
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+  *border-left-color: #ffffff;
+}
+
+// Center logo "Sumea" in Register/Login
+
+.frame {
+  height: 100%; /*can be anything*/
+  width: 100%; /*can be anything*/
+  display: inline-block;
+  vertical-align: top; /*not required*/
+  border: 1px solid black; /*not required*/
+  position: relative;
+}
+.center-logo {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+    
+ .container-fluid {
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+ }
+
+// Helpers
+
+.margin-bottom-none
+{
+    margin-bottom: 0px;
+}
+
+.margin-top-none
+{
+    margin-top: 0px;
+}
+
+.margin-right-none
+{
+    margin-right: 0px;
+}
+
+.margin-left-none
+{
+    margin-left: 0px;
+}
+ 
+.margin-right-5 {
+    margin-right: 5px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.height-5 {
+    height: 5px;
+}
+
+.sidebar-background {
+background-color: #2e353b;
+}
+
+// Slim Logo Center
+
+.slim-sidebar-logo-center {
+    padding-top: 10px; 
+    padding-bottom: 9px;
+}
+
+// Sidebar Logo Center
+
+.sidebar-logo-center {
+padding-top: 10px; 
+padding-bottom: 10px;
+}
+ 
+// Bandwidth Sidebar
+
+.bandwith-paddings {
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+
+.bandwith-mini-header {
+    color: #70767c; 
+    font-size: 10px
+}
+
+.bandwith-mini-percent {
+  color: #70767c;
+}
+
+.bandwith-height-3 {
+    height: 3px;
+}
+
+
+// Icon + Icon Notification
+
+.icon-notification {
+    border: 1px; 
+    position: absolute; 
+    right: 7px; 
+    top: 12px; 
+    font-size: 10px !important;
+}
+
+// Avatar - Dropdowns
+
+.avatar-dropdown {
+    height: 20px; 
+    margin-right: 15px;
+}
+
+.avatar-height-20 {
+    height: 20px;
+}
+
+// Mobile Dropdown Navbar
+
+.divider-background {
+     background-color: #2e353b !important;
+}
+
+
+// Type Custom Colors
+
+.text-red {
+  .text-emphasis-variant(@custom-red);
+}
+
+.text-pink {
+  .text-emphasis-variant(@custom-pink);
+}
+
+.text-tapestry {
+  .text-emphasis-variant(@custom-tapestry);
+}
+
+.text-orange {
+  .text-emphasis-variant(@custom-orange);
+}
+
+.text-fire {
+  .text-emphasis-variant(@custom-fire);
+}
+
+.text-grape {
+  .text-emphasis-variant(@custom-grape);
+}
+
+.text-green {
+  .text-emphasis-variant(@custom-green);
+}
+
+.text-fern {
+  .text-emphasis-variant(@custom-fern);
+}
+
+.text-pelerous {
+  .text-emphasis-variant(@custom-pelerous);
+}
+
+.text-pelerous2 {
+  .text-emphasis-variant(@custom-pelerous2);
+}
+
+
+.text-astral {
+  .text-emphasis-variant(@custom-astral);
+}
+
+.text-stone {
+  .text-emphasis-variant(@custom-stone);
+}
+
+.text-gray {
+  .text-emphasis-variant(@custom-gray);
+}
+
+.progress-bar-astral {
+  .progress-bar-variant(@progress-bar-astral-bg);
+}
+
+.progress-bar-pelerous {
+  .progress-bar-variant(@progress-bar-pelerous-bg);
+}
+
+.progress-bar-pelerous2 {
+  .progress-bar-variant(@progress-bar-pelerous2-bg);
+}
+
+
+// Center Rows in Tables
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+// Colors Squares - colors.html
+    
+.color-swatch-preview {
+  height: 5em;
+  width: 103%;
+  display: table-cell;
+  margin-bottom: 0.5em;
+  border-radius: 3px 3px 0 0;
+  padding: 0;
+  font-size: 2em;
+  text-align: center;
+  line-height: 1.1;
+  vertical-align: middle;
+  overflow: hidden;
+  float: none;
+  position: absolute;
+  top: -0.25em;
+  left: -1.5%;
+  right: -1.5%;
+  background-color: black;
+  color: white;
+}
+    
+.color-swatch-details {
+  padding: 0 5% 9px;
+  margin-bottom: 0.5em;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+    
+}
+
+.color-swatch {
+  float: left;
+  width: 15em;
+  margin-right: 1em;
+  list-style-type: none;
+  font-size: 11px;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+  background-color: #fff;
+  height: 13em;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.color-swatches {
+  padding: 0;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.color-gray-darker {
+  background-color: @gray-darker;
+}
+
+.color-gray-dark {
+  background-color: @gray-dark;
+}
+
+.color-gray {
+  background-color: @gray;
+}
+
+.color-gray-light {
+  background-color: @gray-light;
+}
+
+.color-gray-lighter {
+  background-color: @gray-lighter;
+}
+
+.color-primary {
+  background-color: @brand-primary;
+}
+
+.color-info {
+  background-color: @brand-info;
+}
+
+.color-success {
+  background-color: @brand-success;
+}
+
+.color-warning {
+  background-color: @brand-warning;
+}
+
+.color-danger {
+  background-color: @brand-danger;
+}
+
+.color-custom-red {
+  background-color: @custom-red;
+}
+
+.color-custom-pink {
+  background-color: @custom-pink;
+}
+
+.color-custom-tapestry {
+  background-color: @custom-tapestry;
+}
+
+.color-custom-orange {
+  background-color: @custom-orange;
+}
+
+.color-custom-fire {
+  background-color: @custom-fire;
+}
+
+.color-custom-grape {
+  background-color: @custom-grape;
+}
+
+.color-custom-green {
+  background-color: @custom-green;
+}
+
+.color-custom-fern {
+  background-color: @custom-green;
+}
+
+.color-custom-pelerous {
+  background-color: @custom-pelerous;
+}
+
+.color-custom-astral {
+  background-color: @custom-astral;
+}
+
+.color-custom-stone {
+  background-color: @custom-stone;
+}
+
+.color-custom-gray {
+  background-color: @custom-gray;
+}
+
+
+// Button Custom Colors
+
+@btn-red-color:              #fff;
+@btn-red-bg:                 @custom-red;
+@btn-red-border:             darken(@btn-red-bg, 5%);
+
+.btn-red {
+  .button-variant(@btn-red-color; @btn-red-bg; @btn-red-border);
+}
+
+@btn-grape-color:              #fff;
+@btn-grape-bg:                 @custom-grape;
+@btn-grape-border:             darken(@btn-grape-bg, 5%);
+
+.btn-grape {
+  .button-variant(@btn-grape-color; @btn-grape-bg; @btn-grape-border);
+}
+
+@btn-pink-color:              #fff;
+@btn-pink-bg:                 @custom-pink;
+@btn-pink-border:             darken(@btn-pink-bg, 5%);
+
+.btn-pink {
+  .button-variant(@btn-pink-color; @btn-pink-bg; @btn-pink-border);
+}
+
+@btn-tapestry-color:              #fff;
+@btn-tapestry-bg:                 @custom-tapestry;
+@btn-tapestry-border:             darken(@btn-tapestry-bg, 5%);
+
+.btn-tapestry {
+  .button-variant(@btn-tapestry-color; @btn-tapestry-bg; @btn-tapestry-border);
+}
+
+
+@btn-orange-color:              #fff;
+@btn-orange-bg:                 @custom-orange;
+@btn-orange-border:             darken(@btn-orange-bg, 5%);
+
+.btn-orange {
+  .button-variant(@btn-orange-color; @btn-orange-bg; @btn-orange-border);
+}
+
+
+@btn-fire-color:              #fff;
+@btn-fire-bg:                 @custom-fire;
+@btn-fire-border:             darken(@btn-fire-bg, 5%);
+
+.btn-fire {
+  .button-variant(@btn-fire-color; @btn-fire-bg; @btn-fire-border);
+}
+
+
+@btn-green-color:              #fff;
+@btn-green-bg:                 @custom-green;
+@btn-green-border:             darken(@btn-green-bg, 5%);
+
+.btn-green {
+  .button-variant(@btn-green-color; @btn-green-bg; @btn-green-border);
+}
+
+
+@btn-fern-color:              #fff;
+@btn-fern-bg:                 @custom-fern;
+@btn-fern-border:             darken(@btn-fern-bg, 5%);
+
+.btn-fern {
+  .button-variant(@btn-fern-color; @btn-fern-bg; @btn-fern-border);
+}
+
+
+@btn-pelerous-color:              #fff;
+@btn-pelerous-bg:                 @custom-pelerous;
+@btn-pelerous-border:             darken(@btn-pelerous-bg, 5%);
+
+.btn-pelerous {
+  .button-variant(@btn-pelerous-color; @btn-pelerous-bg; @btn-pelerous-border);
+}
+
+
+@btn-astral-color:              #fff;
+@btn-astral-bg:                 @custom-astral;
+@btn-astral-border:             darken(@btn-astral-bg, 5%);
+
+.btn-astral {
+  .button-variant(@btn-astral-color; @btn-astral-bg; @btn-astral-border);
+}
+
+
+@btn-stone-color:              #fff;
+@btn-stone-bg:                 @custom-stone;
+@btn-stone-border:             darken(@btn-stone-bg, 5%);
+
+.btn-stone {
+  .button-variant(@btn-stone-color; @btn-stone-bg; @btn-stone-border);
+}
+
+
+@btn-gray-color:              #fff;
+@btn-gray-bg:                 @custom-gray;
+@btn-gray-border:             darken(@btn-gray-bg, 5%);
+
+.btn-gray {
+  .button-variant(@btn-gray-color; @btn-gray-bg; @btn-gray-border);
+}
+
+
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: @btn-primary-border;
+}
+
+.btn-success.btn-outline {
+    color: @btn-success-border;
+}
+
+.btn-info.btn-outline {
+    color: @btn-info-border;
+}
+
+.btn-warning.btn-outline {
+    color: @btn-warning-border;
+}
+
+.btn-danger.btn-outline {
+    color: @btn-danger-border;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+.hr-inverse {
+    background-color: red;
+}
+
+// Images Styles
+
+.margin-img-5 {
+    margin: 5px;
+}
+
+.avatar-img-64 {
+    height: 64px
+}
+
+// Register, Login, Forgotten Password, Error 404 Styles
+
+.background-page {
+    background: #edeff0;
+}
+
+.logo-center-form {
+    background-color: #2e353b !important; 
+    height: 150px;
+}
+
+// Mailbox
+
+.avatar-details-mail {
+    height: 45px;
+}
+
+

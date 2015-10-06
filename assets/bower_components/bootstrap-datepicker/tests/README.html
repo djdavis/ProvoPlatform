@@ -1,0 +1,31 @@
+<p>Unit tests, written with <a href="http://docs.jquery.com/QUnit">QUnit</a>, are used to
+expose bugs for squashing, prevent bugs from respawning, and suppress new
+bugs when adding new features and making changes.</p>
+
+<h1>Running the tests</h1>
+
+<p>The simplest way to run the tests is to open <code>tests/tests.html</code> in your browser.
+The test suites will automatically run themselves and present their results.</p>
+
+<p>To run the tests from the command line (after running jshint and jscs, which is
+recommended), install Grunt and run the <code>test</code> task from anywhere within the
+repo:</p>
+
+<pre><code>$ grunt test
+</code></pre>
+
+<h1>Adding tests</h1>
+
+<p>Tests go in js files in the <code>tests/suites/</code> directory tree.  QUnit organizes
+tests into suites called “modules”; there is one module per js file.  If the
+tests you are adding do not fit into an existing module, create a new one at
+<code>tests/suites/&lt;new module&gt;.js</code>, where <code>&lt;new module&gt;</code> is a broad yet
+descriptive name for the suite.  If tests have many year-specific cases (ie,
+behave differently in leap years vs normal years, or have specific buggy
+behavior in a certain year), create the module in a new directory,
+<code>tests/suites/&lt;new module&gt;/&lt;year&gt;.js</code>, where <code>&lt;new module&gt;</code> is the decriptive
+name and <code>&lt;year&gt;</code> is the four-digit year the tests pertain to.</p>
+
+<p>In order for new tests to be run, they must be imported into <code>tests/tests.html</code>.
+Find the script includes headed by the html comment <code>&lt;!-- Test suites --&gt;</code>, and
+add a new one to the list which includes the new js files.</p>

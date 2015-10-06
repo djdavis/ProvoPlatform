@@ -1,0 +1,219 @@
+<h1>Changelog</h1>
+
+<h2>1.3.1</h2>
+
+<p>Repo changes:
+* Automated screenshots have been added to the docs. These probably need to be documented so that contributors can add them when appropriate.
+* Grunt support
+* Missing description and keywords for Packagist
+* Composer: Include translation files into deployment dir
+* Add package name and version to npm package.json</p>
+
+<p>Bugfixes:
+* Remove font-family declaration for datepicker 
+* Don’t deselect date unless datepicker is multidate
+* Removed comment from compiled CSS.
+* Don’t clear input after typing date and hitting Enter when keyboard nav is disabled
+* Fixing the ui displaying ‘undefined nan’ when typing dates in Firefox &amp; IE 
+* Reset tooltip to a default empty value 
+* Fix colspan if calendarWeeks &amp; clearBtn are true 
+* Removed fixed width and height in large and small group addon
+* z-index calculation should not stop at first element
+* Fix IE8 bug with Array#splice with one argument </p>
+
+<p>Documentation:
+* ghpages: jQuery js not being loaded when using HTTPS
+* Adds clearBtn option to sandbox page
+* Minor fixes (typo’s, links,…)</p>
+
+<p>Locale changes</p>
+
+<p>Updated languages:
+* Clear translation in czech
+* Dutch translation
+* Swedish translation
+* Japanese translation
+* Ukrainian translation fixes
+* Add spanish clear, week start and format
+* Added galician clear, week start and format
+* Added missing clear localization value for polish translation
+* Add clear zh-CN translation
+* Fixed Albanian translation typo’s
+* Add missing clear and format localization value for Russian translation
+* Updated Serbian translation
+* Fixed Ukrainian iso code to uk instead of ua 
+* Updated greek translation
+* Update Catalan and Spanish localizations
+* Added missing armenian translations</p>
+
+<p>New languages:
+* Basque
+* Khmer (Cambodia)
+* Bosnian
+* British english
+* Armenian
+* Faroese
+* Swiss Italian and Swiss French</p>
+
+<h2>1.3.0</h2>
+
+<p>New features:
+* Bootstrap 3 support.  Added build files <code>build/build_standalone3.less</code> and <code>build/build3.less</code>, and source files <code>less/datepicker3.less</code> and <code>css/datepicker3.css</code> (built from <code>build_standalone3.less</code>).
+* Multi-date functionality.  This required rethinking several areas of the picker:
+    * The internals have been modified to be completely multidate-centric.
+    * Attributes and methods availabel on events have changed, but the old attributes and functions will still work.
+    * Keyboard navigation has been revamped, as it didn’t work at all properly with multidate selection.
+    * The picker now explicitly supports “no selected date”.</p>
+
+<p>Non-API changes:
+* Keyboard navigation has been changed.  See <code>docs/keyboard.rst</code>.
+* Empty pickers in a range picker setup will be populated with the first date selected by the user to make finding the next date easier.</p>
+
+<p>Bug squashed:
+* Jan 1, 1970 is now highlighted when selected
+* <code>touchstart</code> added to document-bound picker-closing events (alongside <code>mousedown</code>)
+* Fixed a display bug with component add-on icons being vertically higher than they should have been.
+* Input is refocused after clicking the picker.
+* <code>changeDate</code> event is triggered when <code>setDate</code> is called.</p>
+
+<p>Locale changes:
+* Added Ukrainian, Belgium-Dutch, Welsh, Galician, Vietnamese, and Azerbaijani
+* <code>clear</code> for German, Danish, Italian, and Romanian
+* Fixed <code>weekStart</code> and <code>format</code> for Norwegian
+* <code>weekStart</code> and <code>format</code> for Georgian
+* Tweaks for Latvian, French, Vietnamese, Swedish, and Croatian
+* De-duplicated Ukrainian files from <code>uk</code> and <code>ua</code> to just <code>ua</code></p>
+
+<p>Repository changes:
+* Documentation has been moved from the base <code>README.md</code> file to the <code>docs/</code> folder, and been re-written to use sphinx docs.  The docs are now viewable online at http://bootstrap-datepicker.readthedocs.org/.  The <a href="http://eternicode.github.io/bootstrap-datepicker/">gh-pages</a> branch has been reduced to the sandbox demo.
+* Changed the js file header to point at repo/demo/docs urls instead of eyecon.ro
+* The css files are now the output of the standalone build scripts instead of <code>build/build.less</code> etc.
+* <code>composer.json</code> now supports component-installer
+* Added <a href="http://www.jshint.com/docs/">JSHint</a> and <a href="https://github.com/mdevils/node-jscs">JSCS</a> configurations</p>
+
+<h2>1.2.0</h2>
+
+<p>New features:
+* Google Closure Compiler Compatibility
+* Smart orientation by default, and explicit picker orientation with the <code>orientation</code> option
+* Text inside the picker is no longer user-selectable
+* Packagist/Composer support (I think…)
+* No longer depends on glyphicons for arrows
+* <code>clearDate</code> event added, fired when the date is cleared</p>
+
+<p>Bug squashed:
+* <code>noConflict</code> fixed
+* Fix for large years causing an infinite loop in date parsing
+* Fixed cases where <code>changeYear</code> and <code>changeMonth</code> events were not being triggered
+* <code>component.js</code> moved to <code>bower.js</code>
+* Falsey values for <code>startDate</code> and <code>endDate</code> translate to <code>-Infinity</code> and <code>Infinity</code>, respectively (effectively, falsey values mean “no bounds”)
+* Fixed <code>autoclose</code> for non-input, non-component elements
+* Fixed 50% param in <code>mix()</code> less function – expands compatibility with less compilers
+* Fixed <code>update</code> method to update the selected date
+* <code>beforeShowDay</code> was getting UTC dates, now it gets local dates (all dates that developers are given should be in local time, not UTC).
+* <code>startDate</code> and <code>endDate</code> were a bit confused when given <code>new Date()</code> – they would not allow today to be selected (the range should be inclusive), they would change whether it was selectable based on local time, etc.  These quirks should be fixed now.  They both also now expect local dates (which will then be time-zeroed and converted to UTC).
+* Fixed selected date not being automatically constrained to the specified range when <code>setStartDate</code> and <code>setEndDate</code> were called.
+* No longer uses jQuery’s <code>.size()</code> (deprecated in favor of <code>.length</code>)
+* <code>changeDate</code> triggered during manual user input
+* <code>change</code> event fired when input value changed, it wasn’t in some cases</p>
+
+<p>Locale changes:
+* Added Arabic, Norwegian, Georgian
+* <code>clear</code> for French
+* <code>today</code> and <code>clear</code> for Bahasa
+* <code>today</code> and <code>clear</code> for Portuguese (both <code>pt</code> and <code>pt-BR</code>)
+* <code>format</code> for Turkish
+* <code>format</code> and <code>weekStart</code> for Swedish
+* <code>format</code> and <code>weekStart</code> for Simplified Chinese; <code>today</code>, <code>format</code>, and <code>weekStart</code> for Traditional Chinese
+* Fixed typo in Serbian latin (<code>rs-latin</code>)
+* More appropriate use of Traditional Chinese habit in <code>zh-TW</code></p>
+
+<p>1.1.3
+ ———-</p>
+
+<p>Clicking the clear button now triggers the input’s <code>change</code> and datepicker’s <code>changeDate</code> events.
+ Fixed a bug that broke the event-attached <code>format</code> function.</p>
+
+<h2>1.1.2</h2>
+
+<p>Botched release, no change from 1.1.1</p>
+
+<h2>1.1.1</h2>
+
+<p>Fixes a bug when setting startDate or endDate during initialization.</p>
+
+<h2>1.1.0</h2>
+
+<p>New features:
+* Date range picker.
+* Data API / noConflict.
+* <code>getDate</code> and <code>setDate</code> methods.
+* <code>format</code> method for events; this allows you to easily format the <code>date</code> associated with the event.
+* New options:
+  * <code>beforeShowDay</code> option: a dev-provided function that can enable/disable dates, add css classes, and add tooltips.
+  * <code>clearBtn</code>, a button for resetting the picker.</p>
+
+<p>Internal changes:
+* Cleaner and more reliable method for extracting options from all potential sources (defaults, locale overrides, data-attrs, and instantiation options, in that order).  This also populates <code>$.fn.datepicker.defaults</code> with the default values, and uses this hash as the actual source of defaults, meaning you can globally change the default value for a given option.</p>
+
+<p>Bugs squashed:
+* Resolved a conflict with bootstrap’s native <code>.switch</code> class.
+* Fixed a bug with components where they would be stuck with a stale value when editing the value manually.
+* The <code>date</code> attributes on events are now local dates instead of internal UTC dates.
+* Separate <code>Date</code> objects for internal selected and view date references.
+* Clicking multiple times inside inputs no longer hides the picker.</p>
+
+<p>Minor improvements:
+* Better text color for highlighted “today” date.
+* Last year in decade view now marked as “new” instead of “old”.
+* Formats now properly handle trailing separators.</p>
+
+<p>Locale changes:
+* Added Albanian, Estonian, and Macedonian
+* Added <code>weekStart</code> for Russian
+* Added <code>weekStart</code> and <code>format</code> for Finnish</p>
+
+<p>Potentially backward-incompatible changes:
+* Options revamp:
+  * This fixes bugs in the correlation of some data-attrs to their associated option names.  If you use <code>data-date-weekstart</code>, <code>data-date-startdate</code>, or <code>data-date-enddate</code>, you should update these to <code>data-date-week-start</code>, <code>data-date-start-date</code>, or <code>data-date-end-date</code>, respectively.
+  * All options for datepicker are now properties on the datepicker’s <code>o</code> property; options are no longer stored on the Datepicker instance itself.  If you have code that accesses options stored on the datepicker instance (eg, <code>datepicker.format</code>), you will need to update it to access those options via the <code>o</code> property (eg, <code>datepicker.o.format</code>).  “Raw” options are available via the <code>_o</code> property.</p>
+
+<h2>1.0.2</h2>
+
+<p>Small optimizations release</p>
+
+<ul>
+  <li>Reduced the number of times <code>update</code> is called on initialization.</li>
+  <li>Datepicker now detaches the picker dropdown when it is hidden, and appends it when shown.  This removes the picker from the DOM when it is not in use.</li>
+  <li>No longer listens to document/window events unless picker is visible.</li>
+</ul>
+
+<h2>v1.0.1</h2>
+
+<ul>
+  <li>Support for <a href="http://twitter.github.com/bower/">Bower</a></li>
+  <li>Component pickers are now aligned under the input, not the add-on element.</li>
+  <li>Japanese locale now has “today” and “format”.</li>
+  <li>“remove” method removes <code>.data().date</code> if the datepicker is on a non-input.</li>
+  <li>Events on initialized elements are no longer blocked from bubbling up the DOM (jQuery.live et al can now catch the events).</li>
+  <li>Component triggers now include <code>.btn</code> in addition to <code>.add-on</code>.</li>
+  <li>Updates to README contents.</li>
+</ul>
+
+<h2>v1.0.0</h2>
+
+<p>Initial release:</p>
+
+<ul>
+  <li>format option</li>
+  <li>weekStart option</li>
+  <li>calendarWeeks option</li>
+  <li>startDate / endDate options</li>
+  <li>daysOfWeekDisabled option</li>
+  <li>autoclose option</li>
+  <li>startView / mnViewMode options</li>
+  <li>todayBtn / todayHighlight options</li>
+  <li>keyboardNavigation option</li>
+  <li>language option</li>
+  <li>forceParse option</li>
+</ul>

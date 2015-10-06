@@ -1,0 +1,49 @@
+<h2>Publish new version</h2>
+
+<h3>1. <code>develop</code> to <code>master</code></h3>
+
+<p>Send pull request <code>develop</code> to <code>master</code> on github repository and merge it.
+https://github.com/summernote/summernote/compare/master…develop</p>
+
+<h3>2. Build dist files</h3>
+
+<p>Build dist files and push to master
+<code>bash
+# change branch
+git checkout master
+# fetch all changes
+git pull
+# build dist files and binary(.zip) for release post
+grunt dist
+# Push new dist files to remote repository.
+git commit -a -m "Update dist files"
+git push origin
+</code></p>
+
+<h3>3. Release new version</h3>
+<p>Post release note with new tag version on github</p>
+
+<p>https://github.com/summernote/summernote/releases/new</p>
+
+<h3>4. Publish</h3>
+
+<p>Publish on npm
+<code>bash
+npm publish
+</code></p>
+
+<p>Publish on meteor
+<code>bash
+meteor/publish.sh
+</code></p>
+
+<h3>05. Update summernote.github.io</h3>
+
+<p>Update summernote and other bower components.
+<code>bash
+bower update
+</code></p>
+
+<p>Replace binary path with new version on <code>getting-started.html</code>. This binary is generated at <code>3. Release new version</code>.</p>
+
+<p>https://github.com/summernote/summernote.github.io/blob/master/html/getting-started.html</p>
