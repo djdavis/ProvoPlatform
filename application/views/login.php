@@ -25,7 +25,7 @@
 										<input name="username" type="text" class="form-control input-lg" placeholder="Enter a Username or Email...">
 									</div>
 									<div class="form-group">
-										<input name="password" type="password" class="form-control input-lg" placeholder="Your Password..."">
+										<input name="password" type="password" class="form-control input-lg" placeholder="Your Password...">
 									</div>
 									<input type="submit" class="current-parent btn btn-block btn-lg btn-success" value="Login" />
 								</form>

@@ -16,10 +16,10 @@
 			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-toggle-on fa-fw"></i> <span class="menu_title">Statistics</span></a>
 			<ul class="nav nav-second-level">
 				<li>
-					<a href="<?=base_url('stats/domain')?>">Domain Stats</a>
+					<a href="<?=base_url('stats/domains')?>">Domain Stats</a>
 				</li>
 				<li>
-					<a href="<?=base_url('stats/vistors')?>">Visitor Stats</a>
+					<a href="<?=base_url('stats/visitors')?>">Visitor Stats</a>
 				</li>
 				<li>
 					<a href="<?=base_url('stats/downloads')?>">Download Stats</a>
