@@ -26,6 +26,9 @@
 				</li>
 			</ul>
 		</li>
+		<li class="current">
+			<a class="current" href="#" data-toggle="side_tooltip" data-placement="right" title="Graphs"><i class="fa fa-line-chart fa-fw"></i> <span class="menu_title">User Management</span></a>
+		</li>
 	</ul>
 </div>
 <!-- /.sidebar-collapse -->
@@ -82,7 +85,7 @@
 	<li><a href="#"><i class="fa fa-user margin-right-5"></i> Your Profile</a></li>
 	<li><a href="#"><i class="fa fa-gear margin-right-5"></i> Settings</a></li>
 	<li role="separator" class="divider"></li>
-	<li><a href="login.html"><i class="fa fa-sign-out margin-right-5"></i> Sign Out</a>
+	<li><a href="<?=base_url("home/logout")?>"><i class="fa fa-sign-out margin-right-5"></i> Sign Out</a>
 	</li>
 </ul>
 </li>

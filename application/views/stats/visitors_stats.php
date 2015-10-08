@@ -27,22 +27,21 @@
 		</tfoot>
 		<tbody>
 			<tr>
-				<td>Tiger Nixon</td>
-				<td>System Architect</td>
-				<td>Edinburgh</td>
-				<td>61</td>
-				<td>2011/04/25</td>
-				<td>$320,800</td>
-				<td>$320,800</td>
-			</tr>
+				<td>guy@cisco.com</td>
+				<td>10/02/15</td>
+				<td>127.0.0.1</td>
+				<td>Baltimore</td>
+				<td>Maryland</td>
+				<td>ezproposal</td>
+				<td>ezproposal</td>
 			<tr>
-				<td>Garrett Winters</td>
-				<td>Accountant</td>
-				<td>Tokyo</td>
-				<td>63</td>
-				<td>2011/07/25</td>
-				<td>$170,750</td>
-				<td>$170,750</td>
+				<td>girl@cisco.com</td>
+				<td>10/03/15</td>
+				<td>127.0.0.1</td>
+				<td>Baltimore</td>
+				<td>Maryland</td>
+				<td>captain-uccaas</td>
+				<td>captain-uccaas</td>
 			</tr>
 		</tbody>
 	</table>

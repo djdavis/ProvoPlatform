@@ -1,6 +1,6 @@
 <?=$menu?>
 <div id="page-wrapper">
-	<h1 class="page-header margin-top-none">Download Analytics</small></h1>
+	<h1 class="page-header margin-top-none">Download Analytics</h1>
 	<p class="lead">Unique and total downloads for each tracked file</p>
 	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		<thead>
@@ -16,14 +16,17 @@
 			</tr>
 		</tfoot>
 		<tbody>
-			<tr>
-				<td>Tiger Nixon</td>
-				<td>System Architect</td>
-			</tr>
-			<tr>
-				<td>Garrett Winters</td>
-				<td>Accountant</td>
-			</tr>
+		<tbody>
+		<?php
+		if (is_array($downloads)) {			
+			foreach ($downloads as $download) {
+				echo "<tr>";
+				echo "<td>".$download->shortname."</td>";
+				echo "<td>".$download->count."</td>";
+				echo "</tr>";
+			}			
+		}
+		?>
 		</tbody>
 	</table>
 </div>

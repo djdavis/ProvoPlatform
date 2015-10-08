@@ -13,12 +13,12 @@ class Login extends CI_Controller {
   
 	public function verify() {
 		
-		$this->load->model('Verifylogin');
+		$this->load->model('Verifylogin_model');
 		
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		
-		$verified = $this->Verifylogin->check($username,$password);
+		$verified = $this->Verifylogin_model->check($username,$password);
 		
 		if(!$verified) {
 			$page['title'] 		= "Analytics Dashboard | Incorrect Password";
