@@ -16,7 +16,6 @@
 			</tr>
 		</tfoot>
 		<tbody>
-		<tbody>
 		<?php
 		if (is_array($downloads)) {			
 			foreach ($downloads as $download) {

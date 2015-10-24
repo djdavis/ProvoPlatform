@@ -28,22 +28,8 @@
 				</li>
 			</ul>
 		</li>
-		<li>
-			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Orbcomm</span></a>
-			<ul class="nav nav-second-level">
-				<li>
-					<a href="<?=base_url('stats/domains')?>">Domain Stats</a>
-				</li>
-				<li>
-					<a href="<?=base_url('stats/visitors')?>">Visitor Stats</a>
-				</li>
-				<li>
-					<a href="<?=base_url('stats/downloads')?>">Download Stats</a>
-				</li>
-			</ul>
-		</li>
 		<li class="current">
-			<a class="current" href="#" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
+			<a class="current" href="<?=base_url('users/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
 		</li>
 	</ul>
 </div>
@@ -96,7 +82,7 @@
 	<img src="<?=base_url('assets/images/business_guy.png')?>" class="img-circle avatar-height-20" alt="Menu"> <span class="caret"></span>
 </a>
 <ul class="dropdown-menu">
-	<li class="dropdown-header">Signed as <?=$user['email']?></li>
+	<li class="dropdown-header">Signed as <?=$user->user_email?></li>
 	<li role="separator" class="divider"></li>
 	<li><a href="#"><i class="fa fa-user margin-right-5"></i> Your Profile</a></li>
 	<li><a href="#"><i class="fa fa-gear margin-right-5"></i> Settings</a></li>

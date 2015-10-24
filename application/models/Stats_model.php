@@ -9,7 +9,6 @@ Class Stats_model extends CI_Model {
 		parent::__construct();
     }
 	
-
 	public function get_domain_stats() {		
 		$this->db->select('id, domain, pageviews, unique_pageviews');
 		$this->db->from('site_stats');
