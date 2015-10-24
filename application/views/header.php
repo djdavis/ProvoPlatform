@@ -25,7 +25,7 @@
 <meta name="msapplication-TileColor" content="#2e353b">
 <meta name="msapplication-TileImage" content="<?php echo base_url('assets/favicons/mstile-144x144.png') ?>">
 <meta name="theme-color" content="#ffffff">
-    <!-- Bootstrap Core CSS -->
+<!-- Bootstrap Core CSS -->
 <link rel='stylesheet' href='<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>'>
 
 <!-- Dashboard Theme CSS -->
@@ -40,9 +40,8 @@
 <!-- Fonts Awesome CSS -->
 <link rel='stylesheet' href='<?php echo base_url('assets/font-awesome-4.4.0/css/font-awesome.min.css') ?>'>
 
-    <!-- Chartlist-js -->
-    <link rel='stylesheet' href='<?php echo base_url('assets/bower_components/chartist/dist/scss/chartist.css') ?>'>
-    <link rel='stylesheet' href='<?php echo base_url('assets/bower_components/chartist/dist/scss/chartist.css') ?>'>
+<!-- Chartlist-js -->
+<link rel='stylesheet' href='<?php echo base_url('assets/bower_components/chartist/dist/scss/chartist.css') ?>'>
 </head>
 <body>
 <div id="wrapper">

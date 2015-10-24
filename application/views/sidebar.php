@@ -4,16 +4,32 @@
 <div class="sidebar-custom navbar-inverse sidebar" role="navigation">
 <div class="sidebar-nav navbar-collapse">
 	<div class="side_logo text-center sidebar-background">
-		<a class='current-parent current' href="<?=base_url();?>">PROVOCATIV PLATFORM</a>
+		<a class='current-parent current' href="<?=base_url();?>"><img src="<?=base_url('assets/images/cisco-logo-grey300x120')?>" /></a>
 	</div>
 	<ul class="nav" id="side-menu">
-		<li class="small-text-menu hide_el">
-			Navigation</li>
+		<li class="small-text-menu hide_el">Navigation</li>
 		<li class='current-parent current'>
-			<a class='current-parent current' href="<?=base_url()?>" data-toggle="side_tooltip" data-placement="right" title="Start"><i class="fa fa-home fa-fw"></i> <span class="menu_title">Home</span></a>
+			<a class='current-parent current' href="<?=base_url()?>" data-toggle="side_tooltip" data-placement="right" title="Start"><i class="fa fa-home fa-fw"></i> <span class="menu_title">Start</span></a>
 		</li>
 		<li>
-			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-toggle-on fa-fw"></i> <span class="menu_title">Statistics</span></a>
+			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Verizon</span></a>
+			<ul class="nav nav-second-level">
+				<li>
+					<a href="<?=base_url('stats/domains')?>">Overview</a>
+				</li>
+				<li>
+					<a href="#">Calculator</a>
+				</li>
+				<li>
+					<a href="#">EZ-Proposal</a>
+				</li
+				li>
+					<a href="#">NoWiresNoWorries.com</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Orbcomm</span></a>
 			<ul class="nav nav-second-level">
 				<li>
 					<a href="<?=base_url('stats/domains')?>">Domain Stats</a>
@@ -27,7 +43,7 @@
 			</ul>
 		</li>
 		<li class="current">
-			<a class="current" href="#" data-toggle="side_tooltip" data-placement="right" title="Graphs"><i class="fa fa-line-chart fa-fw"></i> <span class="menu_title">User Management</span></a>
+			<a class="current" href="#" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
 		</li>
 	</ul>
 </div>

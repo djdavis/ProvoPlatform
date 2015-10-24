@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://ssit-dev.net/';
+$config['base_url'] = 'http://provocativ.ssit-dev.net/';
 
 /*
 |--------------------------------------------------------------------------
