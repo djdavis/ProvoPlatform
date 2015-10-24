@@ -13,8 +13,7 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src='<?php echo base_url('assets/bower_components/metisMenu/dist/metisMenu.min.js') ?>'></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src='<?php echo base_url('assets/scripts/sumea-custom.js') ?>'></script>
+    <script src='<?php echo base_url('assets/scripts/custom.js') ?>'></script>
     
     <script src='<?php echo base_url('assets/bower_components/chartist/dist/chartist.js') ?>'></script> 
     <script src='<?php echo base_url('assets/scripts/chartist-settings.jss') ?>'></script>

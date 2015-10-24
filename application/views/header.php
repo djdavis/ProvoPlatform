@@ -42,6 +42,7 @@
 
 <!-- Chartlist-js -->
 <link rel='stylesheet' href='<?php echo base_url('assets/bower_components/chartist/dist/scss/chartist.css') ?>'>
+
 </head>
 <body>
 <div id="wrapper">

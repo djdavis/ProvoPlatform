@@ -7,6 +7,7 @@ Class Login_model extends CI_Model {
     
 	function __construct() {
 		parent::__construct();
+        date_default_timezone_set('America/Chicago');
     }
     
     public function validate($username, $password) {
@@ -37,7 +38,7 @@ Class Login_model extends CI_Model {
     }
     
     private function set_userdetail($detail) {
-        $this->user_detail = $detail;
+        $this->user_detail = $detail[0];
     }
     
     public function get_userdetail() {
@@ -61,8 +62,8 @@ Class Login_model extends CI_Model {
 	}
     
     public function update() {
-        $this->db->where('user_id', $this->user_detail['user_id']);
-        if ($this->db->update('admin_users', array('last_logged' => date('Y-m-d g:i:s')))) {
+        $this->db->where('user_id', $this->user_detail->user_id);
+        if ($this->db->update('admin_users', array('last_logged' => date('Y-m-d H:i:s')))) {
             return true;
         } else {
             $this->set_error("Error updating user record");

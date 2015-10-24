@@ -9,27 +9,27 @@
 	<ul class="nav" id="side-menu">
 		<li class="small-text-menu hide_el">Navigation</li>
 		<li class='current-parent current'>
-			<a class='current-parent current' href="<?=base_url()?>" data-toggle="side_tooltip" data-placement="right" title="Start"><i class="fa fa-home fa-fw"></i> <span class="menu_title">Start</span></a>
+			<a class='current-parent current' href="<?=base_url('home')?>" data-toggle="side_tooltip" data-placement="right" title="Start"><i class="fa fa-home fa-fw"></i> <span class="menu_title">Start</span></a>
 		</li>
 		<li>
 			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Verizon</span></a>
 			<ul class="nav nav-second-level">
 				<li>
-					<a href="<?=base_url('stats/domains')?>">Overview</a>
+					<a href="<?=base_url('overview/verizon')?>">Overview</a>
 				</li>
 				<li>
 					<a href="#">Calculator</a>
 				</li>
 				<li>
 					<a href="#">EZ-Proposal</a>
-				</li
-				li>
+				</li>
+				<li>
 					<a href="#">NoWiresNoWorries.com</a>
 				</li>
 			</ul>
 		</li>
-		<li class="current">
-			<a class="current" href="<?=base_url('users/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
+		<li>
+			<a href="<?=base_url('users/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
 		</li>
 	</ul>
 </div>

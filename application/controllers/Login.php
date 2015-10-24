@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	
 	public function index() {
-        if ($this->session->userdata('user_id')) {
+        if ($this->session->userdata('logged_in')) {
             redirect('home', 'refresh');
         } else {
             // Page variables
@@ -28,9 +28,8 @@ class Login extends CI_Controller {
 			$this->load->view('header', $page);	
 			$this->load->view('login', $page);
 			$this->load->view('footer');
-		} else {
-            $detail = $this->Login_model->get_userdetail();            
-			$session = $detail[0];
+		} else {           
+			$session =  $this->Login_model->get_userdetail();
 			$this->session->set_userdata('logged_in', $session);
             $this->Login_model->update();
 			redirect('home', 'refresh');	
