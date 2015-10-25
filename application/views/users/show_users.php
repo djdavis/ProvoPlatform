@@ -32,7 +32,7 @@
 				echo "<td>".$user->user_email."</td>";
 				echo "<td>".($user->last_logged == 0 ? "N/A" : date('m/d/Y g:i:sa', strtotime($user->last_logged)))."</td>";
 				echo "<td>".$user->user_ip."</td>";
-				echo "<td>&nbsp;</td>";
+				echo "<td><a href='".base_url('users/edit/?id='.$user->user_id)."'>Edit</a></td>";
 				echo "</tr>";
 			}			
 		}

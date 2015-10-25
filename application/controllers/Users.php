@@ -27,4 +27,24 @@ class Users extends CI_Controller {
         }
         $this->load->view('footer');
 	}
+    
+    public function edit() {
+ 		$this->load->model('Users_model');
+        if ($this->input->get('id')) {
+            $page['title'] = "Edit | Analytics Dashboard";
+            $page['user'] 	= $this->session->userdata('logged_in');
+            $page['menu'] 	= $this->load->view('sidebar', $page, TRUE);
+            $page['footer'] = $this->load->view('inner_footer', $page, TRUE);
+            $this->load->view('header', $page);
+            if ($this->Users_model->get_user_count() > 0) { 
+                $page['users'] = $this->Users_model->get_users();
+                $this->load->view('users/show_users', $page);			
+            } else {
+                $page['errors'][] = $this->Users_model->get_error();
+            }
+            $this->load->view('footer');
+        } else {
+            redirect('users/show', 'refresh');
+        }
+    }
 }

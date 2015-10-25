@@ -28,6 +28,9 @@
 				</li>
 			</ul>
 		</li>
+        <li>
+			<a href="<?=base_url('modules/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-cubes"></i> <span class="menu_title">Module Management</span></a>
+		</li>        
 		<li>
 			<a href="<?=base_url('users/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
 		</li>
