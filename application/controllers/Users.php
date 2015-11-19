@@ -28,6 +28,21 @@ class Users extends CI_Controller {
         $this->load->view('footer');
 	}
     
+    public function add() {
+ 		$this->load->model('Users_model');
+        $page['title'] = "New User | Analytics Dashboard";
+        $page['user'] 	= $this->session->userdata('logged_in');
+        $page['menu'] 	= $this->load->view('sidebar', $page, TRUE);
+        $page['footer'] = $this->load->view('inner_footer', $page, TRUE);
+        $page['roles']  = $this->Users_model->get_roles();
+        $this->load->view('header', $page);
+        if ($this->Users_model->get_user_count() > 0) { 
+            $page['users'] = $this->Users_model->get_users();
+        }
+        $this->load->view('users/add_user', $page);
+        $this->load->view('footer');
+    }
+
     public function edit() {
  		$this->load->model('Users_model');
         if ($this->input->get('id')) {

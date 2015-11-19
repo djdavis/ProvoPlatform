@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Modules extends CI_Controller {	
+
 	public function index() {
 		$page['title'] = "Modules | Analytics Dashboard";
-        $page['module'] 	= $this->session-userdata('logged_in');
+        $page['user'] 	= $this->session-userdata('logged_in');
         $page['menu'] 	= $this->load->view('sidebar', $page, TRUE);
         $page['footer'] = $this->load->view('inner_footer', $page, TRUE);
 		$this->load->view('header', $page);		
@@ -15,7 +15,7 @@ class Modules extends CI_Controller {
 	public function show() {		
 		$this->load->model('Modules_model');
         $page['title'] = "Modules | Analytics Dashboard";
-        $page['module'] 	= $this->session->userdata('logged_in');
+        $page['user'] 	= $this->session->userdata('logged_in');
         $page['menu'] 	= $this->load->view('sidebar', $page, TRUE);
         $page['footer'] = $this->load->view('inner_footer', $page, TRUE);
 		$this->load->view('header', $page);
@@ -32,7 +32,7 @@ class Modules extends CI_Controller {
  		$this->load->model('Modules_model');
         if ($this->input->get('id')) {
             $page['title'] = "Edit | Analytics Dashboard";
-            $page['module'] 	= $this->session->userdata('logged_in');
+            $page['user'] 	= $this->session->userdata('logged_in');
             $page['menu'] 	= $this->load->view('sidebar', $page, TRUE);
             $page['footer'] = $this->load->view('inner_footer', $page, TRUE);
             $this->load->view('header', $page);

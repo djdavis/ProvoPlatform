@@ -1,12 +1,16 @@
 <?=$menu?>
 <div id="page-wrapper">
-	<h1 class="page-header margin-top-none">User Management</small></h1>
+	<h1 class="page-header margin-top-none">User Management</h1>
+    <div class="pull-right" style="padding-bottom:10px;">
+        <button onclick="window.location.href='<?=base_url('users/add')?>'" class="btn btn-default">New User</button>
+    </div>
 	<table id="users" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		<thead>
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Email</th>
+				<th>Role</th>
                 <th>Last Seen</th>
 				<th>IP</th>
                 <th>Action</th>
@@ -17,6 +21,7 @@
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Email</th>
+				<th>Role</th>
                 <th>Last Seen</th>
 				<th>IP</th>
                 <th>Action</th>
@@ -30,6 +35,7 @@
 				echo "<td>".$user->user_fname."</td>";
 				echo "<td>".$user->user_lname."</td>";
 				echo "<td>".$user->user_email."</td>";
+				echo "<td>".$user->role."</td>";
 				echo "<td>".($user->last_logged == 0 ? "N/A" : date('m/d/Y g:i:sa', strtotime($user->last_logged)))."</td>";
 				echo "<td>".$user->user_ip."</td>";
 				echo "<td><a href='".base_url('users/edit/?id='.$user->user_id)."'>Edit</a></td>";

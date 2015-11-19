@@ -45,11 +45,12 @@ Class Login_model extends CI_Model {
         return $this->user_detail;
     }
     
-	private function check() {		
-		$this->db->select('user_id, user_fname, user_lname, user_email, last_logged');
-		$this->db->from('admin_users');
-		$this->db->where('user_email', $this->get_username());
-		$this->db->where('user_pass',$this->get_pass());
+	private function check() {
+        $this->db->select('a.user_id,a.user_fname,a.user_lname,a.user_email,a.last_logged,a.user_ip,a.user_role,b.role');
+        $this->db->from('admin_users a');
+        $this->db->join('admin_users_roles b','a.user_role=b.id', 'LEFT');
+		$this->db->where('a.user_email', $this->get_username());
+		$this->db->where('a.user_pass',$this->get_pass());
 		$this->db->limit(1);
 		
 		$results = $this->db->get();
