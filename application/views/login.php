@@ -6,7 +6,7 @@
 				<div class="col-md-4 col-md-offset-4">
 					<div class="login-panel panel panel-default">
 						<div class="panel-heading frame logo-center-form" id="container">
-							<h2 class="login-logo">Provocativ Media</h2>
+                            <img src="<?=base_url('assets/images/ProvocativLogo.png')?>" class="center-logo" alt="Logo">
 						</div>
 						<div class="panel-body">
 							<h3 class="text-center">Login</h3>

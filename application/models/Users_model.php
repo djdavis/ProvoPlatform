@@ -59,6 +59,14 @@ Class Users_model extends CI_Model {
 		}
 	}
 	
+    public function insert_user($data) {
+        if ($this->db->insert('admin_users', $data)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 	private function find_users() {		
 		$this->db->select('a.user_id,a.user_fname,a.user_lname,a.user_email,a.last_logged,a.user_ip,b.role');
 		$this->db->from('admin_users a');

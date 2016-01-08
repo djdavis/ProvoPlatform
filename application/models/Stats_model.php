@@ -22,10 +22,17 @@ Class Stats_model extends CI_Model {
 		}
 	}
 
-	public function get_visitor_stats() {
-		$visitors = null;
-		$this->visitors = $visitors;
-		return $this->visitors;
+	public function get_visitor_stats($id) {
+		$this->db->select('email,date,ip,city,state,source,referrer');
+		$this->db->from('page_visitors');
+		$this->db->where("page_id = '".$id."'");
+		$this->db->order_by('date', 'desc');
+		$results = $this->db->get();
+		if ($results->num_rows() > 0) {
+			return $results->result();
+		} else {
+			return false;
+		}
 	}
 	
 	public function get_download_stats() {		

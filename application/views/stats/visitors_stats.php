@@ -1,8 +1,7 @@
 <?=$menu?>
 <div id="page-wrapper">
-	<h1 class="page-header margin-top-none">Visitor Analytics</small></h1>
-	<p class="lead">Location, IP address and time stamp of each visitor to each tracked page</p>
-	<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+	<h1 class="page-header margin-top-none text-center"><?=$page[0]->page_name?> Analytics</small></h1>
+	<table id="visitor_stats" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		<thead>
 			<tr>
 				<th>Email</th>
@@ -26,24 +25,22 @@
 			</tr>
 		</tfoot>
 		<tbody>
-			<tr>
-				<td>guy@cisco.com</td>
-				<td>10/02/15</td>
-				<td>127.0.0.1</td>
-				<td>Baltimore</td>
-				<td>Maryland</td>
-				<td>ezproposal</td>
-				<td>ezproposal</td>
-			<tr>
-				<td>girl@cisco.com</td>
-				<td>10/03/15</td>
-				<td>127.0.0.1</td>
-				<td>Baltimore</td>
-				<td>Maryland</td>
-				<td>captain-uccaas</td>
-				<td>captain-uccaas</td>
-			</tr>
-		</tbody>
+		<?php
+		if (is_array($visitors)) {			
+			foreach ($visitors as $stat) {
+				echo "<tr>";
+				echo "<td>".$stat->email."</td>";
+				echo "<td>".$stat->date."</td>";
+				echo "<td>".$stat->ip."</td>";
+				echo "<td>".$stat->city."</td>";
+				echo "<td>".$stat->state."</td>";
+				echo "<td>".$stat->source."</td>";
+				echo "<td>".$stat->referrer."</td>";
+				echo "</tr>";
+			}			
+		}
+		?>
+		</tbody> 
 	</table>
 </div>
 <?=$footer?>

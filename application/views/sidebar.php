@@ -4,7 +4,7 @@
 <div class="sidebar-custom navbar-inverse sidebar" role="navigation">
 <div class="sidebar-nav navbar-collapse">
 	<div class="side_logo text-center sidebar-background">
-		<a class='current-parent current' href="<?=base_url();?>"><img src="<?=base_url('assets/images/cisco-logo-grey300x120')?>" /></a>
+		<a class='current-parent current' href="<?=base_url();?>"><img src="<?=base_url('assets/images/ProvocativLogoSmall.png')?>" /></a>
 	</div>
 	<ul class="nav" id="side-menu">
 		<li class="small-text-menu hide_el">Navigation</li>
@@ -15,25 +15,50 @@
 			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Verizon</span></a>
 			<ul class="nav nav-second-level">
 				<li>
-					<a href="<?=base_url('overview/verizon')?>">Overview</a>
+					<a href="<?=base_url('overview/verizon')?>">Channel Overview</a>
 				</li>
 				<li>
-					<a href="#">Calculator</a>
+					<a href="#">UCCaaS iLead</a>
+				</li>
+				<li>
+					<a href="#">4G ISR iLead</a>
+				</li>
+				<li>
+					<a href="<?=base_url('stats/view/?id=4')?>">Captain UCCaaS</a>
+				</li>
+				<li>
+					<a href="<?=base_url('stats/view/?id=6')?>">Bookings Calculator</a>
 				</li>
 				<li>
 					<a href="#">EZ-Proposal</a>
 				</li>
 				<li>
-					<a href="#">NoWiresNoWorries.com</a>
+					<a href="<?=base_url('stats/nwnw_view')?>">NoWiresNoWorries.com</a>
 				</li>
 			</ul>
 		</li>
-        <li>
-			<a href="<?=base_url('modules/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-cubes"></i> <span class="menu_title">Module Management</span></a>
-		</li>        
 		<li>
-			<a href="<?=base_url('users/show')?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
-		</li>
+			<a href="javascript:void(0)" data-toggle="side_tooltip_offset" data-placement="right" title="Interface"><span class="fa arrow"></span><i class="fa fa-star fa-fw"></i> <span class="menu_title">Orbcomm</span></a>
+			<ul class="nav nav-second-level">
+				<li>
+					<a href="#">Channel Overview</a>
+				</li>
+			</ul>
+		</li>		
+		<?php
+		if ($user->user_role == 5) {
+			?>
+			<li>
+				<a href="<?= base_url('modules/show') ?>" data-toggle="side_tooltip" data-placement="right"
+				   title="Users"><i class="fa fa-cubes"></i> <span class="menu_title">Module Management</span></a>
+			</li>
+			<li>
+				<a href="<?= base_url('users/show') ?>" data-toggle="side_tooltip" data-placement="right" title="Users"><i
+							class="fa fa-users"></i> <span class="menu_title">User Management</span></a>
+			</li>
+			<?php
+		}
+		?>
 	</ul>
 </div>
 <!-- /.sidebar-collapse -->

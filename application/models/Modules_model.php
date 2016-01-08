@@ -21,7 +21,7 @@ Class Modules_model extends CI_Model {
 	public function set_modules() {
 		$modules = $this->find_modules();
 		if (!$modules) {
-			$this->error = "Failed to retrive modules";
+			$this->error = "Failed to retrieve modules";
 		} else {
 			$this->modules = $modules;
 		}

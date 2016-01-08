@@ -17,5 +17,14 @@
     
     <script src='<?php echo base_url('assets/bower_components/chartist/dist/chartist.js') ?>'></script> 
     <script src='<?php echo base_url('assets/scripts/chartist-settings.jss') ?>'></script>
+    
+    <!-- DataTables JavaScript -->
+    <script src='<?php echo base_url('assets/bower_components/DataTables-1.10.7/media/js/jquery.dataTables.min.js') ?>'></script>
+    <script src='<?php echo base_url('assets/bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.js') ?>'></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $('#visitor_stats').dataTable();
+        });
+    </script>
 </body>
 </html>
